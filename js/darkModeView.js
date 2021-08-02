@@ -10,20 +10,7 @@ class DarkModeView {
       if (!btn) return;
 
       this._bodyElement.classList.toggle("dark");
-
-      // this._bodyElement.classList.contains("dark")
-      //   ? (state = true)
-      //   : (state = false);
-
-      // if (this._bodyElement.classList.contains("dark")) {
-      //   state = true;
-      //   console.log(state);
-      // } else {
-      //   state = false;
-      //   console.log(state);
-      // }
     });
-    // console.log(state);
   }
 }
 

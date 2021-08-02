@@ -46,9 +46,8 @@
     <title>Rest Countries API</title>
   </head>
 
-  <!-- SASS COMPILER TO BE FIXED SRC -->
   <body>
-    <!-- Todo: nav-->
+    <!-- Todo: navigation-->
     <nav
       class="
         nav
@@ -69,7 +68,7 @@
       >
     </nav>
 
-    <!-- Todo: Form-->
+    <!-- Todo: Form Search and Filter-->
     <div class="container">
       <form class="form-inline d-flex flex-column flex-md-row justify-content-md-between align-items-start align-items-md-center flex-wrap mb-5 mt-4 mx-3 mx-md-0">
           <div class="input-group shadow ">
@@ -98,14 +97,6 @@
           </div>
         </form>
 
-      <!-- Todo: Loading Spinners -->
-      <!-- <div class="loading d-flex justify-content-center align-items-center my-5">
-        <div class="d-flex align-items-center flex-column">
-          <div class="spinner-border mr-3" role="status" aria-hidden="true"></div>
-          <strong class="mt-4"> Please wait while the countries are loading...</strong>
-        </div>
-      </div> -->
-
       <!-- Todo: Countries Card -->
       <section
         class="
@@ -115,97 +106,9 @@
           countries 
         "
       >
-        <!-- <div class="card shadow rounded-lg mb-5" data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom">
-          <img src="https://restcountries.eu/data/deu.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div>
-        <div class="card shadow rounded-lg mb-5" data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom">
-          <img src="https://restcountries.eu/data/phl.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div>
-        <div class="card shadow rounded-lg mb-5" data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom">
-          <img src="https://restcountries.eu/data/bra.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div>
-        <div class="card shadow rounded-lg mb-5 data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom"">
-          <img src="https://restcountries.eu/data/ita.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div>
-        <div class="card shadow rounded-lg mb-5" data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom">
-          <img src="https://restcountries.eu/data/tha.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div>
-        <div class="card shadow rounded-lg mb-5" data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom">
-          <img src="https://restcountries.eu/data/jpn.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div>
-        <div class="card shadow rounded-lg mb-5" data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom">
-          <img src="https://restcountries.eu/data/aus.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div>
-        <div class="card shadow rounded-lg mb-5" data-aos="fade-up"
-        data-aos-anchor-placement="bottom-bottom">
-          <img src="https://restcountries.eu/data/vnm.svg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h2 class="card-title">Germany</h2>
-            <p class="card-text"><strong>Population:</strong> 81,770,900</p>
-            <p class="card-text"><strong>Region:</strong> Europe</p>
-            <p class="card-text"><strong>Capital:</strong> Berlin</p>
-          </div>
-        </div> -->
       </section>
-
-      <!-- Todo: Error Fetching the Countries -->
-      <!-- <div class="error d-flex justify-content-center align-items-center flex-column my-5 text-center">
-        <img src="img/Astronaut.png" alt="error" />
-        <h3 class="display-4">Something went wrong</h3>
-        <p class="w-50 lead">
-         Unable to retrieved the country. Please try again!
-        </p>
-      </div> -->
     </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

@@ -10,52 +10,20 @@ import cardView from "../js/cardView.js";
 
 const controlCountries = async function () {
   try {
-    setTimeout(() => {
-      viewCountries._clear();
-    }, 3000);
-
     // 1. load all countries
     await model.loadAllCountries();
+
+    viewCountries._clear();
 
     const data = model.state.countries;
 
     // 2. rendering ALL countries
     data.forEach((country) => {
-      setTimeout(() => {
-        viewCountries.render(country);
-      }, 3000);
+      viewCountries.render(country);
     });
 
-    // data.forEach((country) => {
-    //   viewCountries.render(country);
-    // });
-
-    // Todo: Refactor this line of code
-    // 3. Add click event forEach render cards
+    // 3. Add click event forEach cards
     cardView._cardClickEvent(data);
-
-    // fix: Old
-    // setTimeout(() => {
-    //   const cards = document.querySelectorAll(".card");
-    //   cards.forEach((card, idx) => {
-    //     card.addEventListener("click", function () {
-    //       // console.log(data[idx]);
-    //       model.getBorders(data[idx].borders);
-    //       document.body.classList.add("light");
-    //       detailed.render(data[idx]);
-    //       // setTimeout(() => {
-    //       //   console.log(model.state.data);
-    //       //   detailed._generateBorders(model.state.data);
-    //       // }, 2000);
-
-    //       // 4. Add click event in the button (at this point back button is loaded)
-    //       const buttonBack = document.querySelector(".button__back");
-    //       buttonBack.addEventListener("click", function () {
-    //         location.reload();
-    //       });
-    //     });
-    //   });
-    // }, 3000);
   } catch (err) {
     viewCountries.renderError();
   }
@@ -115,14 +83,11 @@ const controlFilterRegion = async function () {
  */
 const init = function () {
   viewCountries.renderSpinner();
-  controlCountries();
+  viewCountries.addLoadEvent(controlCountries);
   searchResults.addSearchEventHandler(controlSearch);
   darkModeView._addHandlerToggle();
   viewCountries.addHandlerRender(controlFilterRegion);
 };
 
+// Calls the website initial state
 init();
-
-// Todo:
-// Refactor parentElement
-// In controller no HTML

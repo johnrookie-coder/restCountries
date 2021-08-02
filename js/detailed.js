@@ -56,7 +56,7 @@ class DetailedCountry {
     `;
   }
 
-  // FIX MAY BUG
+  // FIX: This is the border button set styles
   // _generateBorders(name) {
   //   // const names = name.map((country) => {
   //   //   return `<button class="button button__border shadow">${country}</button>`;

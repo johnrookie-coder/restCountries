@@ -7,9 +7,6 @@ export const state = {
   countries: {},
   searchResults: {},
   region: {},
-  borders: [],
-  names: [],
-  data: [],
 };
 
 /**
@@ -46,34 +43,4 @@ export const filterRegionResults = async function (region) {
   } catch (err) {
     throw err;
   }
-};
-
-export const getBorders = async function (neighbor) {
-  // const url = `https://restcountries.eu/rest/v2/alpha?codes=${country}`
-  neighbor.map((country) => {
-    const url = `${API_URL}alpha?codes=${country.toLowerCase()}`;
-    state.borders.push(url);
-  });
-  getBorderName(state.borders);
-  // console.log(state.borders);
-};
-
-export const getBorderName = async function (name) {
-  const urls = await name;
-  for (const name of urls) {
-    const contents = await getJSON(name);
-    // console.log(contents);
-    state.names.push(contents);
-  }
-  // return state.names;
-  // console.log(state.names);
-
-  const s = await state.names;
-  s.forEach((country) => {
-    const { name } = country[0];
-    // console.log(name);
-    state.data.push(name);
-  });
-
-  return state.data;
 };

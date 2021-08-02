@@ -25,27 +25,3 @@ export const populationConversion = function (num) {
   const locale = navigator.language;
   return new Intl.NumberFormat(locale).format(num);
 };
-
-// export const clickCardEvent = function () {
-//   setTimeout(() => {
-//     const cards = document.querySelectorAll(".card");
-//     cards.forEach((card, idx) => {
-//       card.addEventListener("click", function () {
-//         // console.log(data[idx]);
-//         model.getBorders(data[idx].borders);
-//         document.body.classList.add("light");
-//         detailed.render(data[idx]);
-//         // setTimeout(() => {
-//         //   console.log(model.state.data);
-//         //   detailed._generateBorders(model.state.data);
-//         // }, 2000);
-
-//         // 4. Add click event in the button (at this point back button is loaded)
-//         const buttonBack = document.querySelector(".button__back");
-//         buttonBack.addEventListener("click", function () {
-//           location.reload();
-//         });
-//       });
-//     });
-//   }, 3000);
-// };

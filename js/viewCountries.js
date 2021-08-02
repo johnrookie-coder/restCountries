@@ -16,15 +16,14 @@ class ViewCountries extends View {
     window.addEventListener("hashchange", handler);
   }
 
-  // fix: NEW!
-  // addClickEvent(card) {
-  //   if (!card) return;
-
-  //   card.addEventListener("click", () => {
-  //     this._cardsx = card;
-  //     console.log(this._cardsx);
-  //   });
-  // }
+  /**
+   *
+   * @param {load event} handler. Handler is a callback function once the window is loaded.
+   * handler = controlCountries function in the controller
+   */
+  addLoadEvent(handler) {
+    this._parentElement.addEventListener("load", handler());
+  }
 }
 
 export default new ViewCountries();

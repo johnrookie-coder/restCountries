@@ -1,6 +1,11 @@
 import detailed from "./detailed.js";
 
 class cardsClickEvent {
+  /**
+   * Add click event to each cards
+   * @param {Object} data. The data refers to the selected card. This includes the name, population etc.
+   * @returns the data of the card has been clicked.
+   */
   _cardClickEvent(data) {
     return setTimeout(() => {
       const cards = document.querySelectorAll(".card");
@@ -16,7 +21,7 @@ class cardsClickEvent {
           });
         });
       });
-    }, 3000);
+    }, 500);
   }
 }
 

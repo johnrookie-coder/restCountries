@@ -4,7 +4,6 @@ import { populationConversion } from "../js/helper.js";
 
 export default class View {
   // Private fields
-  // _parentElement = document.querySelector(".container");
   _parentElement;
   _data;
 
@@ -47,6 +46,7 @@ export default class View {
     this._parentElement.innerHTML = "";
   }
 
+  // render error when something went wrong
   renderError() {
     const markupError = `
     <div class="error d-flex justify-content-center align-items-center flex-column my-5 text-center">
@@ -60,6 +60,7 @@ export default class View {
     this._parentElement.insertAdjacentHTML("beforeend", markupError);
   }
 
+  // render spinner before rendering the list of cards
   renderSpinner() {
     const markupSpinner = `
     <div class="loading d-flex justify-content-center align-items-center">
