@@ -1,0 +1,74 @@
+body {
+  &.light {
+    background-color: $light--mode-bg;
+    .container {
+      .button {
+        background-color: $light--mode;
+        border: none;
+        cursor: pointer;
+        height: 35px;
+        &__back {
+          background-color: $dark--mode-bg;
+          border-radius: 6px;
+          color: $light--mode;
+          height: 45px;
+          width: 135px;
+          user-select: none;
+        }
+      }
+
+      img {
+        padding: 0;
+        height: 50%;
+        width: 90%;
+      }
+
+      .country-details {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        user-select: none;
+
+        &.details {
+          &__title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+          }
+          &__contents {
+            margin: 1rem 0 1.5rem;
+          }
+
+          .button {
+            &__border {
+              margin: 1rem 0.5rem;
+              padding: 0 1rem;
+            }
+          }
+          strong {
+            letter-spacing: 1.4px;
+          }
+        }
+      }
+    }
+  }
+  &.dark {
+    background-color: $dark--mode-bg;
+    color: $light--mode;
+
+    .container {
+      .button {
+        &__back {
+          background-image: linear-gradient(
+            to right bottom,
+            #f8f8f8,
+            #eff0f3,
+            #e6e7ed,
+            #dbe0e8,
+            #d0d8e3
+          );
+          color: $body--copy;
+        }
+      }
+    }
+  }
+}

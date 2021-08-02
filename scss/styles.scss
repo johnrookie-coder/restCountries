@@ -1,0 +1,160 @@
+// Imports
+@import "_variables";
+@import "_sharedStyles";
+@import "_darkMode";
+@import "_mediaQueries";
+@import "_detailed";
+
+body {
+  position: relative;
+  background-color: $light--mode-bg;
+  color: $body--copy;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.125rem;
+
+  nav {
+    background-color: $light--mode;
+    height: 80px;
+    a.nav-link {
+      color: $body--copy !important;
+      font-size: 1rem !important;
+
+      &.h4 {
+        font-size: 1.25rem !important;
+      }
+      i.light {
+        display: inline-block;
+      }
+      i.dark {
+        display: none;
+      }
+    }
+  }
+
+  // Shadow
+  .shadow {
+    box-shadow: 0 2px 10px 8px hsla(0, 0, 89%, 0.4) !important;
+  }
+
+  .loading {
+    color: $dark--mode-bg;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 120px;
+    width: 100%;
+
+    .spinner-border {
+      color: $dark--mode-bg;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  .container {
+    padding: 0;
+    margin: 0 auto;
+
+    form {
+      .input-group {
+        &-text {
+          background-color: $light--mode;
+          border: transparent;
+          color: $form--inputs;
+          font-size: 1rem;
+          font-weight: 300;
+          padding: 8px 0 8px 36px;
+          user-select: none;
+        }
+      }
+      .form-control {
+        border: inherit;
+        border-left: none;
+        box-shadow: none;
+        font-size: inherit;
+        font-weight: inherit;
+        padding: 24px;
+        height: 70px;
+
+        &:focus {
+          border: 1px solid inherit;
+          border-left: none;
+        }
+      }
+
+      // Mobile Dropdown
+      .dropdown {
+        font-weight: 600;
+
+        &-menu {
+          border: transparent;
+          margin: 0.5rem 0 0;
+        }
+
+        &-item {
+          border: transparent;
+          font-size: 1.125rem;
+          font-weight: inherit;
+        }
+
+        // Todo: Fix the arrow alignment
+        // &-toggle::after {
+        //   margin-left: 1.5rem;
+        // }
+      }
+    }
+
+    section.countries {
+      margin-bottom: 200px;
+      .card {
+        border: transparent;
+        border-radius: 8px !important;
+        margin: 8px 0 160px !important;
+        user-select: none;
+        strong {
+          font-weight: 700;
+          letter-spacing: 1.4px;
+        }
+        &-title {
+          font-size: 1.75rem;
+          font-weight: 800;
+          letter-spacing: 1px;
+          margin: 1.5rem 0.5rem;
+        }
+        &-text {
+          font-size: 1.125rem;
+          letter-spacing: 0.2px;
+          margin: 0.5rem;
+
+          &:last-of-type {
+            margin-bottom: 1.5rem;
+          }
+        }
+        img {
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .error {
+      color: $dark--mode-bg;
+      h3.display-4 {
+        font-size: 2.75rem;
+        font-weight: 600;
+      }
+      p.lead {
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 1.175rem;
+      }
+      img {
+        height: 300px;
+        width: 300px;
+      }
+    }
+  }
+}
