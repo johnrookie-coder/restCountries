@@ -27,11 +27,11 @@ class DetailedCountry {
     </div>
     <div class="col-12 col-xl-6">
       <div class="country-details pt-5 pl-5 details">
-        <h1 class="country-details__title ml-lg-2 m-xl-0">${
+        <h1 class="country-details__title ml-lg-2 ml-xl-0 ">${
           this._data.name
         }</h1>
         <div class="row">
-          <div class="col-12 col-md-6 country-details__contents">
+          <div class="col-12 col-md-6 country-details__contents ">
             <p><strong>Native Name:</strong> ${this._data.nativeName}</p>
             <p><strong>Population:</strong> ${populationConversion(
               this._data.population

@@ -8,7 +8,14 @@ body {
         cursor: pointer;
         height: 35px;
         &__back {
-          background-color: $dark--mode-bg;
+          background-image: linear-gradient(
+            to right,
+            #364c5e,
+            #304454,
+            #2b3c4a,
+            #253440,
+            #202c37
+          );
           border-radius: 6px;
           color: $light--mode;
           height: 45px;
@@ -59,12 +66,12 @@ body {
       .button {
         &__back {
           background-image: linear-gradient(
-            to right bottom,
-            #f8f8f8,
-            #eff0f3,
-            #e6e7ed,
-            #dbe0e8,
-            #d0d8e3
+            to right,
+            #fbfbfb,
+            #f4f2f9,
+            #efe8f6,
+            #ebdef2,
+            #e9d4ed
           );
           color: $body--copy;
         }

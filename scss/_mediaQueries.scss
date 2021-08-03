@@ -173,6 +173,7 @@
   }
 }
 
+// Fix: Bug in media query
 @media (min-width: 992px) {
   body {
     .container {
@@ -199,7 +200,8 @@
             .col-12 {
               .country-details {
                 &.details {
-                  padding: 0 0 0 1rem !important;
+                  margin: 2rem 2rem 2rem 3.25rem !important;
+                  padding: 0 !important;
                 }
               }
             }
@@ -208,8 +210,12 @@
 
         .button {
           &__back {
-            margin-left: 2rem !important;
+            margin-left: 2.75rem !important;
           }
+        }
+        // Utilities
+        .ml-lg-2 {
+          margin-left: 0 !important;
         }
       }
     }
@@ -220,13 +226,29 @@
   body {
     &.light {
       .container {
-        &__back {
+        .row {
           margin-left: 0 !important;
-        }
-      }
+          margin-right: -30px !important;
 
-      .country-details {
-        padding: 0 !important;
+          &.mx-0 {
+            margin-right: 0;
+
+            .col-12 {
+              .country-details {
+                &.details {
+                  margin: 0 !important;
+                  padding-left: 1rem !important;
+                }
+              }
+            }
+          }
+        }
+
+        .button {
+          &__back {
+            margin-left: 1.5rem !important;
+          }
+        }
       }
     }
   }
