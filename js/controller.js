@@ -5,6 +5,7 @@ import viewCountries from "../js/viewCountries.js";
 import searchResults from "../js/searchResults.js";
 import darkModeView from "../js/darkModeView.js";
 import cardView from "../js/cardView.js";
+import paginationView from "../js/paginationView.js";
 
 // Todo: Load All Countries -
 
@@ -17,15 +18,23 @@ const controlCountries = async function () {
 
     const data = model.state.countries;
 
+    // TODO: NEW
+    const page = model.getResultsPage();
+
     // 2. rendering ALL countries
-    data.forEach((country) => {
+    page.forEach((country) => {
       viewCountries.render(country);
     });
 
     // 3. Add click event forEach cards
     cardView._cardClickEvent(data);
+
+    // Todo: New
+    // render?
+    paginationView.renderPagination(model.state);
   } catch (err) {
     viewCountries.renderError();
+    console.log(err);
   }
 };
 
@@ -74,8 +83,26 @@ const controlFilterRegion = async function () {
     // 4. Add click event forEach render regions
     cardView._cardClickEvent(model.state.region);
   } catch (err) {
-    console.log(err);
+    viewCountries.renderError();
   }
+};
+
+const controlPagination = function (goToPage) {
+  viewCountries._clear();
+
+  // 1 render NEW PAGE
+  const page = model.getResultsPage(goToPage);
+
+  // 2. rendering NEW countries
+  page.forEach((country) => {
+    viewCountries.render(country);
+  });
+
+  // 3. Add click event forEach cards
+  cardView._cardClickEvent(page);
+
+  // 4. Render the results in the UI
+  paginationView.renderPagination(model.state);
 };
 
 /**
@@ -87,6 +114,7 @@ const init = function () {
   searchResults.addSearchEventHandler(controlSearch);
   darkModeView._addHandlerToggle();
   viewCountries.addHandlerRender(controlFilterRegion);
+  paginationView._addHandler(controlPagination);
 };
 
 // Calls the website initial state

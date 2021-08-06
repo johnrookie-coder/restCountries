@@ -1,12 +1,15 @@
 // Imports
 import { getJSON } from "../js/helper.js";
 import { API_URL } from "../js/config.js";
+import { RESULTS_PER_PAGE } from "../js/config.js";
 
 // This is used to store all the response / data to be able to use in the controller
 export const state = {
   countries: {},
   searchResults: {},
   region: {},
+  resultsPerPage: RESULTS_PER_PAGE,
+  page: 1,
 };
 
 /**
@@ -15,7 +18,7 @@ export const state = {
 export const loadAllCountries = async function () {
   try {
     const data = await getJSON(`${API_URL}all`);
-    state.countries = data;
+    return (state.countries = data);
   } catch (err) {
     throw err;
   }
@@ -43,4 +46,22 @@ export const filterRegionResults = async function (region) {
   } catch (err) {
     throw err;
   }
+};
+
+/**
+ * Pagination
+ * @param {Number} page . This will received a number based the page number that has been clicked
+ * @returns 9 Array items per page
+ */
+
+export const getResultsPage = function (page = state.page) {
+  state.page = page;
+  // start: (page1 - 1) =  0 * 9 = 0;
+  const start = (page - 1) * RESULTS_PER_PAGE;
+
+  // end page1 (1) * 9 = 9
+  const end = page * RESULTS_PER_PAGE;
+
+  // The state.countries contains 250 Array items, we slice and get the first 9 items
+  return state.countries.slice(start, end);
 };

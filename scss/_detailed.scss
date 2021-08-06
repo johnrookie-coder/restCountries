@@ -8,14 +8,15 @@ body {
         cursor: pointer;
         height: 35px;
         &__back {
-          background-image: linear-gradient(
-            to right,
-            #364c5e,
-            #304454,
-            #2b3c4a,
-            #253440,
-            #202c37
-          );
+          // background-image: linear-gradient(
+          //   to right,
+          //   #364c5e,
+          //   #304454,
+          //   #2b3c4a,
+          //   #253440,
+          //   #202c37
+          // );
+          background-color: $dark--mode-bg;
           border-radius: 6px;
           color: $light--mode;
           height: 45px;
@@ -58,22 +59,96 @@ body {
       }
     }
   }
+
   &.dark {
     background-color: $dark--mode-bg;
     color: $light--mode;
+    nav {
+      background-color: $dark--mode;
+      height: 80px;
+      a.nav-link {
+        color: $light--mode !important;
+
+        i.light {
+          display: none;
+        }
+        i.dark {
+          display: inline-block;
+        }
+      }
+    }
+    .shadow {
+      box-shadow: 0 2px 10px 8px hsla(200, 15%, 8%, 0.1) !important;
+    }
+
+    .dropdown {
+      &-menu {
+        @extend %inputDarkMode;
+      }
+      &-item {
+        @extend %inputDarkMode;
+
+        &:hover {
+          background-color: $light--mode;
+          color: $body--copy;
+        }
+      }
+    }
 
     .container {
+      form {
+        .input-group {
+          &-text {
+            @extend %inputDarkMode;
+          }
+        }
+        input::placeholder {
+          color: $light--mode;
+        }
+        .form-control {
+          @extend %inputDarkMode;
+        }
+      }
+      section {
+        .card {
+          @extend %inputDarkMode;
+        }
+      }
+      .error {
+        color: $light--mode;
+      }
+
       .button {
         &__back {
-          background-image: linear-gradient(
-            to right,
-            #fbfbfb,
-            #f4f2f9,
-            #efe8f6,
-            #ebdef2,
-            #e9d4ed
-          );
+          // background-image: linear-gradient(
+          //   to right,
+          //   #fbfbfb,
+          //   #f4f2f9,
+          //   #efe8f6,
+          //   #ebdef2,
+          //   #e9d4ed
+          // );
+          background-color: $light--mode-bg;
           color: $body--copy;
+        }
+      }
+
+      ul.pagination {
+        background-color: $dark--mode-bg;
+        .page-item {
+          .page-link {
+            // background-image: linear-gradient(
+            //   to right,
+            //   #fbfbfb,
+            //   #f4f2f9,
+            //   #efe8f6,
+            //   #ebdef2,
+            //   #e9d4ed
+            // ) !important;
+            background-color: $light--mode;
+            color: $body--copy !important;
+            // box-shadow: 0 8px 4px 4px hsla(203, 20%, 8%, 0.2) !important;
+          }
         }
       }
     }

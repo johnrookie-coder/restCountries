@@ -1,57 +1,6 @@
 body.dark .dropdown-menu, body.dark .dropdown-item, body.dark .container form .input-group-text, body.dark .container form .form-control, body.dark .container section .card {
-  background-color: #2b3945;
-  color: white;
-}
-
-body.dark {
-  background-color: #202c37;
-}
-
-body.dark nav {
-  background-color: #2b3945;
-  height: 80px;
-}
-
-body.dark nav a.nav-link {
+  background-color: #2b3945 !important;
   color: white !important;
-}
-
-body.dark nav a.nav-link i.light {
-  display: none;
-}
-
-body.dark nav a.nav-link i.dark {
-  display: inline-block;
-}
-
-body.dark .shadow {
-  -webkit-box-shadow: 0 2px 10px 8px rgba(17, 21, 23, 0.1) !important;
-          box-shadow: 0 2px 10px 8px rgba(17, 21, 23, 0.1) !important;
-}
-
-body.dark .dropdown-item:hover {
-  background-color: white;
-  color: #111517;
-}
-
-body.dark .container form input::-webkit-input-placeholder {
-  color: white;
-}
-
-body.dark .container form input:-ms-input-placeholder {
-  color: white;
-}
-
-body.dark .container form input::-ms-input-placeholder {
-  color: white;
-}
-
-body.dark .container form input::placeholder {
-  color: white;
-}
-
-body.dark .container .error {
-  color: white;
 }
 
 @media (min-width: 320px) {
@@ -219,7 +168,7 @@ body.dark .container .error {
 @media (min-width: 1200px) {
   body.light .container .row {
     margin-left: 0 !important;
-    margin-right: -25px;
+    margin-right: -30px !important;
   }
   body.light .container .row.mx-0 {
     margin-right: 0;
@@ -245,8 +194,7 @@ body.light .container .button {
 }
 
 body.light .container .button__back {
-  background-image: -webkit-gradient(linear, left top, right top, from(#364c5e), color-stop(#304454), color-stop(#2b3c4a), color-stop(#253440), to(#202c37));
-  background-image: linear-gradient(to right, #364c5e, #304454, #2b3c4a, #253440, #202c37);
+  background-color: #202c37;
   border-radius: 6px;
   color: white;
   height: 45px;
@@ -296,10 +244,65 @@ body.dark {
   color: white;
 }
 
-body.dark .container .button__back {
-  background-image: -webkit-gradient(linear, left top, right top, from(#fbfbfb), color-stop(#f4f2f9), color-stop(#efe8f6), color-stop(#ebdef2), to(#e9d4ed));
-  background-image: linear-gradient(to right, #fbfbfb, #f4f2f9, #efe8f6, #ebdef2, #e9d4ed);
+body.dark nav {
+  background-color: #2b3945;
+  height: 80px;
+}
+
+body.dark nav a.nav-link {
+  color: white !important;
+}
+
+body.dark nav a.nav-link i.light {
+  display: none;
+}
+
+body.dark nav a.nav-link i.dark {
+  display: inline-block;
+}
+
+body.dark .shadow {
+  -webkit-box-shadow: 0 2px 10px 8px rgba(17, 21, 23, 0.1) !important;
+          box-shadow: 0 2px 10px 8px rgba(17, 21, 23, 0.1) !important;
+}
+
+body.dark .dropdown-item:hover {
+  background-color: white;
   color: #111517;
+}
+
+body.dark .container form input::-webkit-input-placeholder {
+  color: white;
+}
+
+body.dark .container form input:-ms-input-placeholder {
+  color: white;
+}
+
+body.dark .container form input::-ms-input-placeholder {
+  color: white;
+}
+
+body.dark .container form input::placeholder {
+  color: white;
+}
+
+body.dark .container .error {
+  color: white;
+}
+
+body.dark .container .button__back {
+  background-color: #fafafa;
+  color: #111517;
+}
+
+body.dark .container ul.pagination {
+  background-color: #202c37;
+}
+
+body.dark .container ul.pagination .page-item .page-link {
+  background-color: white;
+  color: #111517 !important;
 }
 
 body {
@@ -333,8 +336,8 @@ body nav a.nav-link i.dark {
 }
 
 body .shadow {
-  -webkit-box-shadow: 0 2px 10px 8px rgba(227, 227, 227, 0.4) !important;
-          box-shadow: 0 2px 10px 8px rgba(227, 227, 227, 0.4) !important;
+  -webkit-box-shadow: 0 8px 10px 8px rgba(214, 214, 214, 0.4) !important;
+          box-shadow: 0 8px 10px 8px rgba(214, 214, 214, 0.4) !important;
 }
 
 body .loading {
@@ -376,6 +379,7 @@ body .container form .form-control {
   border-left: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+  color: #111517;
   font-size: inherit;
   font-weight: inherit;
   padding: 24px;
@@ -404,13 +408,13 @@ body .container form .dropdown-item {
 }
 
 body .container section.countries {
-  margin-bottom: 200px;
+  margin-top: 50px;
 }
 
 body .container section.countries .card {
   border: transparent;
   border-radius: 8px !important;
-  margin: 8px 0 160px !important;
+  margin: 8px 0 120px !important;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -465,5 +469,26 @@ body .container .error p.lead {
 body .container .error img {
   height: 300px;
   width: 300px;
+}
+
+body .container nav ul.pagination {
+  background-color: #fafafa;
+}
+
+body .container nav ul.pagination .page-item {
+  border-radius: 8px;
+  color: #111517 !important;
+}
+
+body .container nav ul.pagination .page-item .page-link {
+  border-radius: 8px;
+  background-color: #2b3945;
+  color: white !important;
+  border: none;
+  font-family: inherit;
+  text-align: center;
+  padding: 0.75rem 1.625rem;
+  margin-bottom: 4rem;
+  height: 60px;
 }
 /*# sourceMappingURL=styles.css.map */

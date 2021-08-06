@@ -1,5 +1,5 @@
 // Shared styles (Inherit)
 %inputDarkMode {
-  background-color: $dark--mode;
-  color: $light--mode;
+  background-color: $dark--mode !important;
+  color: $light--mode !important;
 }

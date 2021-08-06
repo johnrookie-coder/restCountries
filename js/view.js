@@ -17,15 +17,22 @@ export default class View {
     this._parentElement.insertAdjacentHTML("beforeend", markup);
   }
 
+  renderPagination(data) {
+    this._data = data;
+    this._clear();
+    const markup = this._generateMarkup();
+    this._parentElement.insertAdjacentHTML("beforeend", markup);
+  }
+
   // generate the HTML Markup
   _generateMarkup() {
     return `
-    <div class="card shadow rounded-lg" data-aos="fade-up"
+    <div class="card " data-aos="fade-up"
     data-aos-duration="2000">
           <img src="${this._data.flag}" class="card-img-top" alt="${
       this._data.name
     }">
-          <div class="card-body">
+          <div class="card-body shadow">
             <h2 class="card-title"> ${this._data.name}</h2>
             <p class="card-text"><strong>Population:</strong> ${populationConversion(
               this._data.population
