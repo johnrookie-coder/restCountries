@@ -17,12 +17,13 @@ export default class View {
     this._parentElement.insertAdjacentHTML("beforeend", markup);
   }
 
-  renderPagination(data) {
-    this._data = data;
-    this._clear();
-    const markup = this._generateMarkup();
-    this._parentElement.insertAdjacentHTML("beforeend", markup);
-  }
+  // renderPagination(data) {
+  //   this._data = data;
+  //   this._clear();
+  //   // markup na generated is ung sa countries
+  //   const markup = this._generateMarkup();
+  //   this._parentElement.insertAdjacentHTML("beforeend", markup);
+  // }
 
   // generate the HTML Markup
   _generateMarkup() {

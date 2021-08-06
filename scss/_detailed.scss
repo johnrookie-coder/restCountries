@@ -77,10 +77,10 @@ body {
         }
       }
     }
+    // Shadow for dark-mode
     .shadow {
-      box-shadow: 0 2px 10px 8px hsla(200, 15%, 8%, 0.1) !important;
+      box-shadow: 0 2px 6px 6px hsla(207, 26%, 17%, 0.4) !important;
     }
-
     .dropdown {
       &-menu {
         @extend %inputDarkMode;
@@ -107,6 +107,27 @@ body {
         }
         .form-control {
           @extend %inputDarkMode;
+        }
+
+        .dropdown {
+          font-weight: 600;
+
+          &-menu {
+            border: transparent;
+            margin: 0.5rem 0 0;
+          }
+
+          &-item {
+            border: transparent;
+            padding: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: inherit;
+
+            &:hover {
+              background-color: $light--mode-bg !important;
+              color: $body--copy !important;
+            }
+          }
         }
       }
       section {
@@ -136,6 +157,13 @@ body {
       ul.pagination {
         background-color: $dark--mode-bg;
         .page-item {
+          &.prev {
+            .page-link {
+              background-color: $dark--mode;
+              color: $light--mode !important;
+              // color: $body--copy !important;
+            }
+          }
           .page-link {
             // background-image: linear-gradient(
             //   to right,
@@ -147,7 +175,6 @@ body {
             // ) !important;
             background-color: $light--mode;
             color: $body--copy !important;
-            // box-shadow: 0 8px 4px 4px hsla(203, 20%, 8%, 0.2) !important;
           }
         }
       }

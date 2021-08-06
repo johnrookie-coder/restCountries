@@ -16,9 +16,10 @@ const controlCountries = async function () {
 
     viewCountries._clear();
 
+    // data = 250 countries
     const data = model.state.countries;
 
-    // TODO: NEW
+    // Render 9 countries each page
     const page = model.getResultsPage();
 
     // 2. rendering ALL countries
@@ -29,9 +30,8 @@ const controlCountries = async function () {
     // 3. Add click event forEach cards
     cardView._cardClickEvent(data);
 
-    // Todo: New
-    // render?
-    paginationView.renderPagination(model.state);
+    // 4. Render Pagination
+    paginationView._renderPagination(model.state);
   } catch (err) {
     viewCountries.renderError();
     console.log(err);
@@ -49,13 +49,21 @@ const controlSearch = async function () {
 
     const data = model.state.searchResults;
 
+    // Extracted value (9 items)
+    const page = model.getResultsPageSearch();
+    console.log(page);
+
     // 2. rendering ALL MATCHED countries
-    data.forEach((country) => {
+    page.forEach((country) => {
       searchResults.render(country);
     });
 
     // 3. Add click event forEach search country
     cardView._cardClickEvent(data);
+
+    // 4. Render Pagination
+    paginationView._renderPaginationSearchResults(model.state);
+    paginationView._addHandler(controlPaginationSearchResults);
   } catch (err) {
     viewCountries.renderError();
   }
@@ -75,15 +83,26 @@ const controlFilterRegion = async function () {
     // 2. Clear the existing render results
     viewCountries._clear();
 
+    // Countries data
+    const filteredRegion = model.state.region;
+
+    // Extracted value (9 items)
+    const page = model.getResultsPageRegion();
+
     // 3. Loop through the countries with matching regions
-    model.state.region.forEach((country) => {
+    page.forEach((country) => {
       viewCountries.render(country);
     });
 
     // 4. Add click event forEach render regions
-    cardView._cardClickEvent(model.state.region);
+    cardView._cardClickEvent(filteredRegion);
+
+    // 5. Render Pagination number
+    paginationView._renderPaginationRegion(model.state);
+    paginationView._addHandler(controlPaginationRegions);
   } catch (err) {
     viewCountries.renderError();
+    console.log(err);
   }
 };
 
@@ -102,7 +121,45 @@ const controlPagination = function (goToPage) {
   cardView._cardClickEvent(page);
 
   // 4. Render the results in the UI
-  paginationView.renderPagination(model.state);
+  paginationView._renderPagination(model.state);
+};
+
+// Todo: NEW-
+const controlPaginationRegions = function (goToPage) {
+  viewCountries._clear();
+
+  // 1 render NEW PAGE
+  const page = model.getResultsPageRegion(goToPage);
+
+  // 2. rendering NEW countries
+  page.forEach((country) => {
+    viewCountries.render(country);
+  });
+
+  // 3. Add click event forEach cards
+  cardView._cardClickEvent(page);
+
+  // 4. Render the results in the UI
+  paginationView._renderPaginationRegion(model.state);
+};
+
+// Todo: NEW-
+const controlPaginationSearchResults = function (goToPage) {
+  viewCountries._clear();
+
+  // 1 render NEW PAGE
+  const page = model.getResultsPageSearch(goToPage);
+
+  // 2. rendering NEW countries
+  page.forEach((country) => {
+    viewCountries.render(country);
+  });
+
+  // 3. Add click event forEach cards
+  cardView._cardClickEvent(page);
+
+  // 4. Render the results in the UI
+  paginationView._renderPaginationSearchResults(model.state);
 };
 
 /**

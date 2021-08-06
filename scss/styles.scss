@@ -30,11 +30,6 @@ body {
     }
   }
 
-  // Shadow
-  .shadow {
-    box-shadow: 0 8px 10px 8px hsla(0, 0, 84%, 0.4) !important;
-  }
-
   .loading {
     color: $dark--mode-bg;
     font-family: inherit;
@@ -97,12 +92,12 @@ body {
           padding: 0.75rem;
           font-size: 1.125rem;
           font-weight: inherit;
-        }
 
-        // Todo: Fix the arrow alignment
-        // &-toggle::after {
-        //   margin-left: 1.5rem;
-        // }
+          &:hover {
+            background-color: $dark--mode-bg !important;
+            color: $light--mode !important;
+          }
+        }
       }
     }
 
@@ -112,7 +107,6 @@ body {
       .card {
         border: transparent;
         border-radius: 8px !important;
-        // margin: 8px 0 160px !important;
         margin: 8px 0 120px !important;
         user-select: none;
         strong {
@@ -166,7 +160,15 @@ body {
         .page-item {
           border-radius: 8px;
           color: $body--copy !important;
+          font-weight: 600;
 
+          &.prev {
+            .page-link {
+              background-color: hsl(0, 0%, 85%);
+              // color: $light--mode !important;
+              color: $body--copy !important;
+            }
+          }
           .page-link {
             border-radius: 8px;
             background-color: $dark--mode;
@@ -178,17 +180,19 @@ body {
             //   #253440,
             //   #202c37
             // ) !important;
-            // box-shadow: 0 16px 8px 2px hsla(200, 15%, 8%, 0.4) !important;
             color: $light--mode !important;
             border: none;
             font-family: inherit;
             text-align: center;
-            padding: 0.75rem 1.625rem;
             margin-bottom: 4rem;
             height: 60px;
           }
         }
       }
     }
+  }
+  // Shadow for light-mode
+  .shadow {
+    box-shadow: 0 2px 6px 6px hsla(199, 21%, 88%, 0.4) !important;
   }
 }
