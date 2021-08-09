@@ -58,7 +58,7 @@ export const filterRegionResults = async function (region) {
  * it will continue to update based on what the user has clicked.
  * @returns The first 9 array items on the list
  */
-export const getResultsPage = function (page = state.page) {
+export const getResultsPage = function (page = 1) {
   state.page = page;
   // start: (page1 - 1) =  0 * 9 = 0;
   const start = (page - 1) * RESULTS_PER_PAGE;
@@ -90,7 +90,7 @@ export const getResultsPageRegion = function (page = 1) {
 };
 
 // Todo: NEW
-export const getResultsPageSearch = function (page = state.page) {
+export const getResultsPageSearch = function (page = 1) {
   state.page = page;
   // start: (page1 - 1) =  0 * 9 = 0;
   const start = (page - 1) * RESULTS_PER_PAGE;
@@ -98,6 +98,7 @@ export const getResultsPageSearch = function (page = state.page) {
   // end page1 (1) * 9 = 9
   const end = page * RESULTS_PER_PAGE;
 
+  console.log(state);
   // The state.countries contains 250 Array items, we slice and get the first 9 items
   return state.searchResults.slice(start, end);
 };

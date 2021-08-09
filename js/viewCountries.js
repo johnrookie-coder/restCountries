@@ -5,6 +5,8 @@ import View from "../js/view.js";
 class ViewCountries extends View {
   // Private fields
   _parentElement = document.querySelector("section.countries");
+  // Dropdown
+  _dropDownElements = document.querySelector(".dropdown-menu");
   _data;
 
   /**
@@ -23,6 +25,17 @@ class ViewCountries extends View {
    */
   addLoadEvent(handler) {
     this._parentElement.addEventListener("load", handler());
+  }
+
+  /**
+   * Add click event on the dropdown items
+   * @param {*} handler. A callback function on which the click event will be passed in.
+   * handler = controlFilterRegion. We passed in the "e" object to use it in the controlFilterRegion function.
+   */
+  addClickEvent(handler) {
+    this._dropDownElements.addEventListener("click", function (e) {
+      handler(e);
+    });
   }
 }
 

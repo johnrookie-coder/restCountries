@@ -48,6 +48,7 @@ const controlSearch = async function () {
     await model.searchResults(query);
 
     const data = model.state.searchResults;
+    console.log(data);
 
     // Extracted value (9 items)
     const page = model.getResultsPageSearch();
@@ -70,11 +71,14 @@ const controlSearch = async function () {
 };
 
 // Todo: Filter by region -
+// BUG!
+// hashchange is not fixed in pagination
 
-const controlFilterRegion = async function () {
+const controlFilterRegion = async function (e) {
   try {
-    // 1. Get the hash change
-    const region = window.location.hash.slice(1);
+    // 1. Get the selected region
+    const region = e.target.textContent.toLowerCase();
+    console.log(region);
 
     await model.filterRegionResults(region);
 
@@ -170,8 +174,8 @@ const init = function () {
   viewCountries.addLoadEvent(controlCountries);
   searchResults.addSearchEventHandler(controlSearch);
   darkModeView._addHandlerToggle();
-  viewCountries.addHandlerRender(controlFilterRegion);
   paginationView._addHandler(controlPagination);
+  viewCountries.addClickEvent(controlFilterRegion);
 };
 
 // Calls the website initial state

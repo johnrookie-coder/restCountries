@@ -37,8 +37,12 @@ class DetailedCountry {
               this._data.population
             )}</p>
             <p><strong>Region:</strong> ${this._data.region}</p>
-            <p><strong>Sub Region:</strong> ${this._data.subregion}</p>
-            <p><strong>Capital:</strong> ${this._data.capital}</p>
+            <p><strong>Sub Region:</strong> ${
+              this._data.subregion ? this._data.subregion : "No subregion"
+            }</p>
+            <p><strong>Capital:</strong> ${
+              this._data.capital ? this._data.capital : "No capital city"
+            }</p>
           </div>
           <div class="col-12 col-md-6  country-details__contents">
             <p><strong>Top Level Domain:</strong> ${

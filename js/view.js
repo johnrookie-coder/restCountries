@@ -28,12 +28,12 @@ export default class View {
   // generate the HTML Markup
   _generateMarkup() {
     return `
-    <div class="card " data-aos="fade-up"
+    <div class="card shadow" data-aos="fade-up"
     data-aos-duration="2000">
           <img src="${this._data.flag}" class="card-img-top" alt="${
       this._data.name
     }">
-          <div class="card-body shadow">
+          <div class="card-body">
             <h2 class="card-title"> ${this._data.name}</h2>
             <p class="card-text"><strong>Population:</strong> ${populationConversion(
               this._data.population

@@ -19,7 +19,9 @@ body {
       font-size: 1rem !important;
 
       &.h4 {
+        color: #800080 !important;
         font-size: 1.25rem !important;
+        font-weight: 900;
       }
       i.light {
         display: inline-block;
@@ -102,7 +104,6 @@ body {
     }
 
     section.countries {
-      // margin-bottom: 25px;
       margin-top: 50px;
       .card {
         border: transparent;
@@ -155,6 +156,8 @@ body {
     }
 
     nav {
+      background-color: $light--mode-bg;
+
       ul.pagination {
         background-color: $light--mode-bg;
         .page-item {
@@ -165,7 +168,6 @@ body {
           &.prev {
             .page-link {
               background-color: hsl(0, 0%, 85%);
-              // color: $light--mode !important;
               color: $body--copy !important;
             }
           }

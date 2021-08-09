@@ -259,6 +259,12 @@ body.dark nav a.nav-link {
   color: white !important;
 }
 
+body.dark nav a.nav-link.h4 {
+  color: #a6a6fc !important;
+  font-size: 1.25rem !important;
+  font-weight: 900;
+}
+
 body.dark nav a.nav-link i.light {
   display: none;
 }
@@ -323,16 +329,20 @@ body.dark .container .button__back {
   color: #111517;
 }
 
-body.dark .container ul.pagination {
+body.dark .container nav {
   background-color: #202c37;
 }
 
-body.dark .container ul.pagination .page-item.prev .page-link {
+body.dark .container nav ul.pagination {
+  background-color: #202c37;
+}
+
+body.dark .container nav ul.pagination .page-item.prev .page-link {
   background-color: #2b3945;
   color: white !important;
 }
 
-body.dark .container ul.pagination .page-item .page-link {
+body.dark .container nav ul.pagination .page-item .page-link {
   background-color: white;
   color: #111517 !important;
 }
@@ -356,7 +366,9 @@ body nav a.nav-link {
 }
 
 body nav a.nav-link.h4 {
+  color: #800080 !important;
   font-size: 1.25rem !important;
+  font-weight: 900;
 }
 
 body nav a.nav-link i.light {
@@ -501,6 +513,10 @@ body .container .error p.lead {
 body .container .error img {
   height: 300px;
   width: 300px;
+}
+
+body .container nav {
+  background-color: #fafafa;
 }
 
 body .container nav ul.pagination {
