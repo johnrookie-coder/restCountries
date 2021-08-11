@@ -202,7 +202,6 @@ class PaginationView {
     );
     const currentPage = this._data.page;
 
-    console.log(numPages);
     // Page 1 and there are OTHER pages
     if (currentPage === 1 && numPages > 1) {
       return `

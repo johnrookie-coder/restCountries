@@ -34,7 +34,6 @@ const controlCountries = async function () {
     paginationView._renderPagination(model.state);
   } catch (err) {
     viewCountries.renderError();
-    console.log(err);
   }
 };
 
@@ -67,18 +66,17 @@ const controlSearch = async function () {
     paginationView._addHandler(controlPaginationSearchResults);
   } catch (err) {
     viewCountries.renderError();
+    // Clear the pagination button when error button occurs
+    paginationView._clear();
   }
 };
 
 // Todo: Filter by region -
-// BUG!
-// hashchange is not fixed in pagination
 
 const controlFilterRegion = async function (e) {
   try {
     // 1. Get the selected region
     const region = e.target.textContent.toLowerCase();
-    console.log(region);
 
     await model.filterRegionResults(region);
 
@@ -153,6 +151,7 @@ const controlPaginationSearchResults = function (goToPage) {
 
   // 1 render NEW PAGE
   const page = model.getResultsPageSearch(goToPage);
+  console.log(page);
 
   // 2. rendering NEW countries
   page.forEach((country) => {

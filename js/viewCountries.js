@@ -3,7 +3,6 @@
 import View from "../js/view.js";
 
 class ViewCountries extends View {
-  // Private fields
   _parentElement = document.querySelector("section.countries");
   // Dropdown
   _dropDownElements = document.querySelector(".dropdown-menu");

@@ -37,6 +37,11 @@ export const searchResults = async function (query) {
   }
 };
 
+/**
+ * Get the selected region of the user/s.
+ * @param {String} region. The value of region comes from the controller wherein in
+ * the dropdown menu, whenever click some of the options there, it will become the region value to be able to render the countries with selected region.
+ */
 export const filterRegionResults = async function (region) {
   try {
     const data = await getJSON(`${API_URL}region/${region}`);
@@ -70,7 +75,6 @@ export const getResultsPage = function (page = 1) {
   return state.countries.slice(start, end);
 };
 
-// Todo: New-
 /**
  *
  * @param {Number} page . The page number comes from the state.page whenever the pagination is click, it continues
@@ -89,7 +93,12 @@ export const getResultsPageRegion = function (page = 1) {
   return state.region.slice(start, end);
 };
 
-// Todo: NEW
+/**
+ *
+ * @param {Number} page . The page number comes from the state.page whenever the pagination is click, it continues
+ * it will continue to update based on what the user has clicked.
+ * @returns The first 9 array items on the list
+ */
 export const getResultsPageSearch = function (page = 1) {
   state.page = page;
   // start: (page1 - 1) =  0 * 9 = 0;
@@ -98,7 +107,6 @@ export const getResultsPageSearch = function (page = 1) {
   // end page1 (1) * 9 = 9
   const end = page * RESULTS_PER_PAGE;
 
-  console.log(state);
   // The state.countries contains 250 Array items, we slice and get the first 9 items
   return state.searchResults.slice(start, end);
 };

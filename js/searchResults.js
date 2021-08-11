@@ -27,6 +27,7 @@ class SearchResults extends View {
     });
   }
 
+  // Clears the search field value once submitted.
   _clearInput() {
     this._searchInput.value = "";
   }
