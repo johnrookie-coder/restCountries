@@ -51,7 +51,6 @@ const controlSearch = async function () {
 
     // Extracted value (9 items)
     const page = model.getResultsPageSearch();
-    console.log(page);
 
     // 2. rendering ALL MATCHED countries
     page.forEach((country) => {
@@ -65,9 +64,9 @@ const controlSearch = async function () {
     paginationView._renderPaginationSearchResults(model.state);
     paginationView._addHandler(controlPaginationSearchResults);
   } catch (err) {
-    viewCountries.renderError();
     // Clear the pagination button when error button occurs
     paginationView._clear();
+    viewCountries.renderError();
   }
 };
 
