@@ -43,6 +43,8 @@ const controlSearch = async function () {
   try {
     const query = searchResults.getQuery();
 
+    paginationView._clear();
+
     // 1. load matching country
     await model.searchResults(query);
 
@@ -64,7 +66,6 @@ const controlSearch = async function () {
     paginationView._renderPaginationSearchResults(model.state);
     paginationView._addHandler(controlPaginationSearchResults);
   } catch (err) {
-    // Clear the pagination button when error button occurs
     paginationView._clear();
     viewCountries.renderError();
   }
